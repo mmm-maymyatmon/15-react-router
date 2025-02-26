@@ -1,5 +1,3 @@
-
-
 import EventForm from '../components/EventForm';
 
 function NewEventPage() {

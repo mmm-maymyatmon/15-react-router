@@ -1,18 +1,12 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink } from 'react-router-dom';
 
-import classes from "./MainNavigation.module.css";
-import NewsletterSignup from "./NewsletterSignup";
+import classes from './MainNavigation.module.css';
+import NewsletterSignup from './NewsletterSignup';
 
 function MainNavigation() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <header className={classes.header}>
-      <button className={classes.menuButton} onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </button>
-      <nav className={`${classes.nav} ${isOpen ? classes.open : ""}`}>
+      <nav>
         <ul className={classes.list}>
           <li>
             <NavLink
@@ -43,6 +37,16 @@ function MainNavigation() {
               }
             >
               Newsletter
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/auth"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Authentication
             </NavLink>
           </li>
         </ul>
